@@ -1,15 +1,15 @@
 clear all
 % load sound: ’laughter’, ’chirp’,’gong’ or ’handel’,’splat’,’train’
-%[y,Fs] = audioread(filename)
-load('gong');
+[y,Fs] = audioread('bot.wav');
+%load('gong');
 % to play this sound use
 %sound(y, Fs);
 N = length(y);
 Y = fft(y);% fft from matlab
-t = 10; % specify the threshold value
+t = 1000; % specify the threshold value
 W = Y;
 for i = 1:length(Y)
-    if (abs(Y(i) < t)) % compress
+    if (abs(Y(i)) < t) % compress
         W(i) = 0;
     end
 end
