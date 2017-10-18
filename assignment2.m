@@ -72,3 +72,27 @@ hold on
 % plot half exact Fourier cosine coefficients
 stem(aexact(1:N/4),'or')
 hold off
+
+%d
+clear all
+N = 2^8;
+for i = 0:N-1
+    x(i+1) = -pi + 2*pi*i/N;
+end
+z = mydft(x)
+a(1) = real(z(1)) + real(z(N));
+
+for i = 1:N-1
+    a(i+1) = real(z(1+i)) + real(z(N+1-i));% cosine coefficients calculated from the DFT z
+end
+
+for k = 1:N
+    aexact(k) = 2*(-1)^(k+1)/k;
+end
+
+figure
+stem(a(1:N/4),'*')
+hold on
+% plot half exact Fourier cosine coefficients
+stem(aexact(1:N/4),'or')
+hold off
