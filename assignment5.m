@@ -1,5 +1,6 @@
 clear all
 % load sound: ’laughter’, ’chirp’,’gong’ or ’handel’,’splat’,’train’
+%[y,Fs] = audioread(filename)
 load('gong');
 % to play this sound use
 %sound(y, Fs);
