@@ -79,7 +79,7 @@ N = 2^8;
 for i = 0:N-1
     x(i+1) = -pi + 2*pi*i/N;
 end
-z = mydft(x)
+z = mydft(x);
 a(1) = real(z(1)) + real(z(N));
 
 for i = 1:N-1
