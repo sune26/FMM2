@@ -1,7 +1,7 @@
 y = rand(1,2^12);
 
 tic
-mydft(y);
+%mydft(y);
 toc
 
 tic
